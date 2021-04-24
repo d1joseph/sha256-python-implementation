@@ -18,7 +18,7 @@ A member of the SHA2 family of security functions, SHA256 is a cryptographic one
 `SHA256("The quick brown fox jumps over the lazy dog.")`  
 `>>> ef537f25c895bfa782526529a9b63d97aa631564d5d789c2b765448c8635fb6c`
 
-This behaviour is due the [avalanche effect](https://en.wikipedia.org/wiki/Avalanche_effect), a desirable characteristic in cryptographic hashing which prevents poor randomization thus lowering input predicability given only the output.
+This behaviour is due the [avalanche effect](https://en.wikipedia.org/wiki/Avalanche_effect), a desirable characteristic in cryptographic hashing which reduces poor randomization thus lowering input predicability given only the output.
 
 The algorithm is structured as a [Merkle-Damgård](https://en.wikipedia.org/wiki/Merkle%E2%80%93Damg%C3%A5rd_construction) contruct and inputs processed via a one-way function built using a [Davies-Meyer](https://en.wikipedia.org/wiki/One-way_compression_function#Davies%E2%80%93Meyer) structure.
 
