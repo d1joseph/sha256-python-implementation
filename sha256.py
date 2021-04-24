@@ -18,3 +18,30 @@ import sys
 import os
 import math
 
+# perform binary conversion for pre-processing 
+def binary_conversion(raw_input):
+    """
+    Accepts a raw data input and converts to binary.
+    """
+    byte_array = bytearray(str(raw_input), "utf8")
+    bin_message = [int(bin(byte)[2:]) for byte in byte_array]
+    bin_message.append(1)
+
+    return bin_message
+
+
+def pad_bin_message(bin_message):
+    """
+    Accepts a binary representation as an array
+    and pads with 0s until the data is a multiple
+    of 512 less 64 bits.
+    """
+    return padded_bin_message
+
+# main
+def sha256(data_input):
+    return hash_digest
+
+
+if __name__ == "__main__":
+    pass
