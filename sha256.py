@@ -1,5 +1,6 @@
-# SHA 256 implementation. A command line executable that encrypts inputs.
-# Inputs can be user data input or media file types. Anything really.
+# SHA 256 python implementation as a command line executable that encrypts input and
+# returns a 256 bit length output has a hash digest.
+# Inputs can be user data or media file types. Anything really.
 
 """
 * Filename:   sha256.py
@@ -16,5 +17,4 @@
 import sys
 import os
 import math
-
 
