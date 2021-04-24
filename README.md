@@ -32,7 +32,7 @@ The formal algorithm spec includes a set of operations and functions we need to 
 
 ### Basic Operations:
 - Bools = AND, XOR, OR
-- We perform addition modulo 2**32, denoted by A + B. This contrains the integer to 32 bit range
+- We perform addition modulo 2^32, denoted by A + B. This constrains the integer to 32 bit range
 - RotR(A, n) =  denotes the circular right shift on N bits of the binary word A.
 - ShR(A, n) =  denotes the right shift on N bits of the binary word A.
 - A||B denotes the concatenation of the binary words A and B.
