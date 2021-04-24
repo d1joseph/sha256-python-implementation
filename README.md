@@ -10,20 +10,17 @@ SHA algorithms and it's inner workings.
 ## About SHA256
 A member of the SHA2 family of security functions, SHA256 is a cryptographic one-way hash function which returns a 256 bit length digest. It is a keyless hash function which is a standard known as [MDC](https://en.wikipedia.org/wiki/MDC-2) (Manipulation Detection Code). A slight change in the input will produce a significant difference in the resulting digest.
 
-**For example**
+**For example**  
 `SHA256("The quick brown fox jumps over the lazy dog")`  
 `>>> d7a8fbb307d7809469ca9abcb0082e4f8d5651e46d3cdb762d02d0bf37c9e592`
 
-**Same input with a period at the end**
+**Same input with a period at the end**  
 `SHA256("The quick brown fox jumps over the lazy dog.")`  
 `>>> ef537f25c895bfa782526529a9b63d97aa631564d5d789c2b765448c8635fb6c`
 
 This behaviour is due the [avalanche effect](https://en.wikipedia.org/wiki/Avalanche_effect), a desirable characteristic in cryptographic hashing which prevents poor randomization thus lowering input predicability given only the output.
 
-The algorithm is structured as a [Merkle-Damgård](https://en.wikipedia.org/wiki/Merkle%E2%80%93Damg%C3%A5rd_construction) contruct:
-![Merkle-Damgård construct](https://en.wikipedia.org/wiki/Merkle%E2%80%93Damg%C3%A5rd_construction#/media/File:Merkle-Damgard_hash_big.svg)
-
-And inputs processed via a one-way function built using a [Davies-Meyer](https://en.wikipedia.org/wiki/One-way_compression_function#Davies%E2%80%93Meyer) structure.
+The algorithm is structured as a [Merkle-Damgård](https://en.wikipedia.org/wiki/Merkle%E2%80%93Damg%C3%A5rd_construction) contruct and inputs processed via a one-way function built using a [Davies-Meyer](https://en.wikipedia.org/wiki/One-way_compression_function#Davies%E2%80%93Meyer) structure.
 
 Ultimately a cryptographic hash function has 3 key properties:
 1. Is determinisctic in that some data input will always produce the same output unique to that input.
