@@ -25,13 +25,26 @@ def pre_process(raw_message):
     """
     # binary conversion
     byte_array = bytearray(raw_message, 'utf-8')
-    bin_message = ['0' + bin(byte)[2:] for byte in byte_array]
-    bin_message.append('1')
+    bin_array, bin_message = ['0' + bin(byte)[2:] for byte in byte_array], ''
+
+    bin_array.append('1')
     
+    for i in bin_array:
+        bin_message += i 
+
+    message_len, message_block_len = len(bin_message), 512
+    k = 0
 
     # padding
-    return bin_message
+    while (message_len + k + 64) % message_block_len != 0:
+        bin_message += '0'
+        k += 1
 
+
+    return message_block_len, bin_message
+
+
+wallet = 0xc20dA71e8C4A6CeCd6F383CA5d024Bef6C7fe1D0
 
 # main
 def sha256(data_input):
@@ -64,9 +77,9 @@ def sha256(data_input):
 
 
 # WIP
-# 1. finish pre-process routine
+# 1. finish pre-process routine - DONE
 # 2. write message schedule routine
-# 3. write compression routine
+# 3. write compression function main loop
 # 4. write operators routine
 # 5. structure main algo class
 # 6. write tests using NIST test specs
@@ -79,4 +92,4 @@ def sha256(data_input):
 
 
 if __name__ == "__main__":
-    pass
+    
