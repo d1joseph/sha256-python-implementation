@@ -2,7 +2,7 @@
 
 ## Why I wrote this?
 A Saturday afternoon fun project. I wanted to learn more about cryptographic hash functions and thought writing
-a pure implementation could be a fun way to do so. I used the NIST paper http://csrc.nist.gov/publications/fips/fips180-2/fips180-2withchangenotice.pdf as my basis for the specification.
+a pure implementation could be a fun way to do so. I used this NIST paper http://csrc.nist.gov/publications/fips/fips180-2/fips180-2withchangenotice.pdf as my basis for the specification.
 
 This is my pure python implementation of the SHA256 hash algorithm. Hopefully this repo helps others in their learning of
 SHA algorithms and it's inner workings.
