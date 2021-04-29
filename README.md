@@ -51,7 +51,7 @@ The formal algorithm spec includes a set of operations and functions we need to 
 - hash constants (h) 
 - message schedule (w)
 
-## The algorithm step-by-step
+## step-by-step
 Step 1 - pre-processing
 Step 2 - initialise hash values (h)
 Step 3 - initialise round constants (k)
@@ -63,6 +63,9 @@ step 8 - concatenate final hash!
 
 ###
 To do:
-1. finish writing README.md
-2. testing using NIST provided test vectors
-3. setuptools.py to make project installable
+1. pre-processor and padding functions
+2. bitwise operators - rotr, maj and ch
+3. main chunk loop for 32 bit digest size
+4. message scheduling
+5. compression
+6. write and implement tests with NIST specs
