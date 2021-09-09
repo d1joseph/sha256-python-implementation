@@ -2,7 +2,6 @@
 
 # SHA 256 python implementation as a command line executable that encrypts input and
 # returns a 256 bit length output as a hash digest.
-# Inputs can be user data or media file types. Anything really.
 from sys import getsizeof as gso
 
 """
