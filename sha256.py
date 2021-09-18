@@ -44,22 +44,26 @@ k = [0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x9
 # pre-processing raw data into 512 bit message blocks for message digesting in the scheduler.
 def pre_process(raw_data):
     """
-    Process raw message parameter as a 512 bit message block.
-    >>> pre_process('hello world')
-    >>> 0110100001100101011011000110110001101111001000000111011101101111011100100110110001100100
     """
 
-    # raw_value converted to binary representation as a string and append a 1 as separator.
-    msg = ''.join(format(i, '08b') for i in bytearray(raw_data, encoding='utf-8')) + '1'
+    # raw value converted to binary representation as a string
+    msg = ''.join(format(i, '08b') for i in bytearray(raw_data, encoding='utf-8'))
+
+    # binary repr of the converted msg length in bits 
+    msg_len_endian = bin(len(msg))
+    
     # add zeroes for padding to until message block is evenly divisible by 512.
     # reserve 64 bits on the end to encode the len of original message. 
-    
-    while len(msg) % (512) != 0:
-        msg += '0'
-    
-    print(f'Original message: {raw_data}')
-    print(f'Current message block bit length: {len(msg)}')
+    msg_block = msg + '1' + '' 
 
+    while len(msg_block) % 512 != 0:
+        msg_block += '0'
+    
+    # std outputs
+    print(f'Original data: {raw_data}\nType: {type(raw_data)}\n')
+    print(f'Message converted to binary: \n{msg}\n')
+    print(f'Current message block (unpadded) with 1 bit separator: \n{msg_block}\n')
+    print(f'Current message block bit length: {len(msg_block)}')
 
 # main
 def sha256(data_input):
