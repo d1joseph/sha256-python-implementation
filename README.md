@@ -45,27 +45,17 @@ The formal algorithm spec includes a set of operations and functions we need to 
 - LowerSigma(X) = RotR(X, 7) XOR RotR(X, 18) XOR ShR(X, 3) <- rotate xor shift right
 - LowerSigma(X) = RotR(X, 17) XOR RotR(X, 19) XOR ShR(X, 10) <- rotate xor shift right
 
-
-### constants
+### Constants
 - round constants(k)
 - hash constants (h) 
 - message schedule (w)
 
-## step-by-step
-Step 1 - pre-processing
-Step 2 - initialise hash values (h)
-Step 3 - initialise round constants (k)
-step 4 - chunk loop
-step 5 - create the message schedule (w)
-step 6 - compress
-step 7 - modify final values
-step 8 - concatenate final hash!
-
-###
-To do:
-1. pre-processor and padding functions
-2. bitwise operators - rotr, maj and ch
-3. main chunk loop for 32 bit digest size
-4. message scheduling
-5. compression
-6. write and implement tests with NIST specs
+## General Step-By-Step
+1. Pre-processing
+2. Initialise hash values (h)
+3. Initialise round constants (k)
+4. Chunk loop - 512 bit messsage blocks to run through scheduler
+5. Message schedule (w) - breaksdown blocks in the 32 bit arrays (words). See https://qvault.io/cryptography/how-sha-2-works-step-by-step-sha-256/ for a really good explanation of how this step works in detail
+7. Compression
+8. Modify final values
+9. Concatenate final hash!
