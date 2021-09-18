@@ -27,6 +27,9 @@ Ultimately a cryptographic hash function has 3 key properties:
 2. Accepts input of arbitrary length and returns a fixed length output, 256 bits in the case of SHA256.
 3. Is one-way in that the input cannot be derived from the output.
 
+## Verification 
+This implementation of the SHA256 algorithm aims to meet verifiability through demonstrating machine-checked proofs for functional correctness, of side-channel restistance, of information-flow properties (A.Appel, 2015 Verification of a Cryptographic Primitive: SHA-256).
+
 ## Operations and Constants
 The formal algorithm spec includes a set of operations and functions we need to utilize on word chunks and some constant variables we need to initialise.
 
