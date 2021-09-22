@@ -54,7 +54,7 @@ def pre_process(raw_data):
     
     # add zeroes for padding to until message block is evenly divisible by 512.
     # reserve 64 bits on the end to encode the len of original message. 
-    msg_block = msg + '1' + '' 
+    msg_block = msg + '1' + ''
 
     while len(msg_block) % 512 != 0:
         msg_block += '0'
@@ -65,8 +65,11 @@ def pre_process(raw_data):
     print(f'Current message block (unpadded) with 1 bit separator: \n{msg_block}\n')
     print(f'Current message block bit length: {len(msg_block)}')
 
+
 # main
 def sha256(data_input):
+    """
+    """
     pass
 
 
