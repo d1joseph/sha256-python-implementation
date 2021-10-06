@@ -23,7 +23,9 @@ __licence__ = 'MIT'
 import copy
 import struct
 import binascii
+from tests.keys import keyGen
 
+print(keyGen())
 
 # hash constants (h) - 8 hash values of the first 32 bits of the fractional parts of the
 # square roots of the first 8 primes: 2, 3, 5, 7, 11, 13, 17, 19.
