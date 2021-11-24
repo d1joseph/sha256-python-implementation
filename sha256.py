@@ -30,7 +30,6 @@ import copy
 import struct
 import binascii
 from tests.keys import keyGen
-
 # TESTS
 # print(keyGen())
 
@@ -71,8 +70,7 @@ def pre_process(raw_data):
     # std outputs
     print(f'Original data: {raw_data}\nType: {type(raw_data)}\n')
     print(f'Message converted to binary: \n{msg}\n')
-    print(f'Current message block (unpadded) with 1 bit separator: \n{msg_block}\n')
-    print(f'Current message block bit length: {len(msg_block)}')
+    print(f'Message block bit length: {len(msg_block)}')
 
 
 # main
