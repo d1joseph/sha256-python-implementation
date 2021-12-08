@@ -1,8 +1,9 @@
 #!/usr/bin/python
 
-# SHA 256 python implementation as a command line executable that encrypts input and
-# returns a 256 bit length output has a hash digest.
-# Inputs can be user data or media file types. Anything really.
+# A python implementation of the SHA256 hash algorithm as a command line executable that takes a parameter input (data) and
+# returns the 256 bit length output has a hash digest.
+# I wrote this as a learning exercise to better understand cryptopgrahic hash functions and primitives.
+
 """
 * Filename:   sha256.py
 * Author:     Dhiv Joseph
@@ -11,16 +12,30 @@
 * Description:  Implementation of the SHA-256 hashing algorithm as a cmdlet.
                 SHA-256 is one of the three algorithms in the SHA2 spec.
                 The others, SHA-384 and SHA-512, are not included.
+                
                 This code is written and intended for educational purposes only and
                 should not be implemented in anything resembling a production
-                environment.
-                Algorithm spec can be found here:
+                environment, application or encryption method.
+                
+                The NIST algorithm spec can be found here:
                 # http://csrc.nist.gov/publications/fips/fips180-2/fips180-2withchangenotice.pdf
 
+                This algorithm was tested according the NIST standard. 
+
 """
+
 __author__ = 'Dhiv Joseph'
 __licence__ = 'MIT'
+<<<<<<< HEAD:sha256.py
 
+=======
+import copy
+import struct
+import binascii
+from tests.keys import keyGen
+# TESTS
+# print(keyGen())
+>>>>>>> 04218c2d40a64219907df70161fdabdac06579c0:app/sha256.py
 
 # hash constants (h) - 8 hash values of the first 32 bits of the fractional parts of the
 # square roots of the first 8 primes: 2, 3, 5, 7, 11, 13, 17, 19.
@@ -40,8 +55,17 @@ K = [0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x9
 
 class SHA256:
 
+<<<<<<< HEAD:sha256.py
     def __init__(self):
         pass
+=======
+# pre-process the raw data into 512 bit message blocks (chunks) to digest and moved into the scheduler.
+def pre_process(raw_data):
+    """
+    """
+    # raw value converted to binary representation as a string
+    msg = ''.join(format(i, '08b') for i in bytearray(raw_data, encoding='utf-8'))
+>>>>>>> 04218c2d40a64219907df70161fdabdac06579c0:app/sha256.py
 
     
     def translation(self, message):
@@ -115,6 +139,36 @@ class SHA256:
                 word.append(int(b))
             words.append(zero_zill(word, 32, 'BE'))
     
+<<<<<<< HEAD:sha256.py
+=======
+    # std outputs
+    print(f'Original data: {raw_data}\nType: {type(raw_data)}\n')
+    print(f'Message converted to binary: \n{msg}\n')
+    print(f'Message block bit length: {len(msg_block)}')
+
+
+# main
+def sha256(data_input):
+    """
+    """
+    pass
+
+
+# WIP
+# 1. optimize pre-process routine and validate output for step 2 (meets message block properties) 
+# 2. message schedule routine
+# 3. compression function main loop
+# 4. operators routine
+# 5. structure main algo class
+# 6. write tests using NIST test specs
+# 7. testing with pytest
+# 8. Pep8 everything
+# 9. cmdlet module
+# 10. test cmdlet use cases
+# 11. setup tools and package
+# 12. final tests
+# 13. deploy
+>>>>>>> 04218c2d40a64219907df70161fdabdac06579c0:app/sha256.py
 
     # message preparation
     def pre_process_message(message):
